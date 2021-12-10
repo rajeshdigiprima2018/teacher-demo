@@ -6,9 +6,9 @@
     "mongo": {
         "host": "localhost",
         "port": "27017",
-        "username": "",
+        "username": "admin",
         "password": "",
         "database": "nodebb",
-        "uri": ""
+        "uri": "059f6598"
     }
 }
