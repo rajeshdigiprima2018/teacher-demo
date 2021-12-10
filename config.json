@@ -7,8 +7,8 @@
         "host": "localhost",
         "port": "27017",
         "username": "admin",
-        "password": "",
+        "password": "059f6598",
         "database": "nodebb",
-        "uri": "059f6598"
+        "uri": ""
     }
 }
