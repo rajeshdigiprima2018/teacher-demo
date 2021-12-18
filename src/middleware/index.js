@@ -37,8 +37,8 @@ middleware.regexes = {
 const csurfMiddleware = csrf({
 	cookie: nconf.get('url_parsed').protocol === 'https:' ? {
 		secure: true,
-		sameSite: 'Strict',
-		//sameSite: 'None',
+		//sameSite: 'Strict',
+		sameSite: 'None',
 		httpOnly: false,
 	} : true,
 });

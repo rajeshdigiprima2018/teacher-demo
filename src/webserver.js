@@ -36,14 +36,14 @@ const auth = require('./routes/authentication');
 
 const helpers = require('../public/src/modules/helpers');
 
-if (nconf.get('ssl')) {
-	server = require('https').createServer({
-		key: fs.readFileSync(nconf.get('ssl').key),
-		cert: fs.readFileSync(nconf.get('ssl').cert),
-	}, app);
-} else {
-	server = require('http').createServer(app);
-}
+// if (nconf.get('ssl')) {
+// 	server = require('https').createServer({
+// 		key: fs.readFileSync(nconf.get('ssl').key),
+// 		cert: fs.readFileSync(nconf.get('ssl').cert),
+// 	}, app);
+// } else {
+// 	server = require('http').createServer(app);
+// }
 
 
 // if (nconf.get('ssl')) {
@@ -54,11 +54,11 @@ if (nconf.get('ssl')) {
 // } else {
 // 	server = require('http').createServer(app);
 // }
-// const httpsOptions = {
-//     key: fs.readFileSync('./security/apache-selfsigned.key'),
-//     cert: fs.readFileSync('./security/apache-selfsigned.crt')
-// }
-//  server = require('https').createServer(httpsOptions, app);
+const httpsOptions = {
+    key: fs.readFileSync('./security/apache-selfsigned.key'),
+    cert: fs.readFileSync('./security/apache-selfsigned.crt')
+}
+ server = require('https').createServer(httpsOptions, app);
 
     
 module.exports.server = server;
