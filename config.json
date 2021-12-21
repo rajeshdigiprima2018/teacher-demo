@@ -2,7 +2,7 @@
     "url": "https://139.59.83.155:4002",
     "secret": "07bb7718-ec43-4f52-92ab-18ec37d1fa04",
     "database": "mongo",
-    "port": "4002",
+    "port": "4567",
     "mongo": {
         "host": "localhost",
         "port": "27017",
