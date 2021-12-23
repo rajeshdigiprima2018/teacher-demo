@@ -46,21 +46,25 @@ const helpers = require('../public/src/modules/helpers');
 // }
 
 
-// if (nconf.get('ssl')) {
-	// server = require('https').createServer({
-	// 	key: fs.readFileSync('../security/cert.key'),
-	// 	cert: fs.readFileSync('../security/cert.key'),
-	// }, app);
-// } else {
-// 	server = require('http').createServer(app);
-// }
-const httpsOptions = {
-    // key: fs.readFileSync('./security/apache-selfsigned.key'),
-    // cert: fs.readFileSync('./security/apache-selfsigned.crt')
-    key: fs.readFileSync('./test-ssl/key.pem'),
-    cert: fs.readFileSync('./test-ssl/cert.pem')
+if (nconf.get('ssl')) {
+	console.log('ssl ');
+	server = require('https').createServer({
+		key: fs.readFileSync('./test-ssl/key.pem'),
+		cert: fs.readFileSync('./test-ssl/cert.pem'),
+		// key: fs.readFileSync('./security/apache-selfsigned.key'),
+		// cert: fs.readFileSync('./security/apache-selfsigned.crtm'),
+	}, app);
+} else {
+	console.log('ssl not',nconf.get());
+	server = require('http').createServer(app);
 }
- server = require('https').createServer(httpsOptions, app);
+// const httpsOptions = {
+//     // key: fs.readFileSync('./security/apache-selfsigned.key'),
+//     // cert: fs.readFileSync('./security/apache-selfsigned.crt')
+//     key: fs.readFileSync('./test-ssl/key.pem'),
+//     cert: fs.readFileSync('./test-ssl/cert.pem')
+// }
+//  server = require('https').createServer(httpsOptions, app);
 
     
 module.exports.server = server;
