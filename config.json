@@ -3,7 +3,6 @@
     "secret": "07bb7718-ec43-4f52-92ab-18ec37d1fa04",
     "database": "mongo",
     "port": "4002",
-    "ssl": true,
     "mongo": {
         "host": "localhost",
         "port": "27017",
