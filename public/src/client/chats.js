@@ -419,7 +419,6 @@ define('forum/chats', [
 		if (!roomid) {
 			roomid = '';
 		}
-
 		const url = 'user/' + ajaxify.data.userslug + '/chats/' + roomid + window.location.search;
 		if (self.fetch) {
 			fetch(config.relative_path + '/api/' + url, { credentials: 'include' })
@@ -435,6 +434,38 @@ define('forum/chats', [
 								Chats.addEventListeners();
 								hooks.fire('action:chat.loaded', $('.chats-full'));
 								messages.scrollToBottom($('.expanded-chat ul.chat-content'));
+								 // nagar start
+		 						    $(document).ready(function() {
+		 						    	console.log('jay shree mahakal22')
+		 						      //$(".members").children("a").css({"color", "#333"});
+                                      //$(".chats-full [component='chat/header']").css({"color", "#333"}); 
+                                      //$(".chats-full [component='chat/header']").css("background-color", "#f1f1f1"); 
+		 						     
+		 						      //$('.expanded-chat').find('button').css('display', 'none');
+                                     
+
+                                      $(".avatar-placeholder").css("border-radius", "50%");
+                                      $(".avatar-placeholder").css("width", "60px");
+                                      $(".avatar-placeholder").css("height", "60px");
+                                      //$(".avatar-placeholder").css("background", "#ddd");
+                                      //$(".aavatar-placeholder").css("color", "#333");
+                                      $(".avatar-placeholder").css("font-size", "30px");
+
+                                      $(".avatar-sm").css("border-radius", "50%");
+                                      $(".avatar-sm").css("width", "60px");
+                                      $(".avatar-sm").css("height", "60px");
+
+                                      //$(".avatar-sm").css("background", "#ddd");
+                                      //$(".avatar-sm").css("color", "#333");
+                                      $(".avatar-sm").css("font-size", "30px");
+		 						      $(".pull-right").css("display", "none");
+
+		 						      //$(".members").css("pointer-events", "none");
+		 						      $('.expanded-chat').find('.members').css('pointer-events', 'none');
+
+                                      $(".message-header").css("pointer-events", "none");
+                                    });
+                                // nagar end    
 								if (history.pushState) {
 									history.pushState({
 										url: url,
@@ -530,7 +561,6 @@ define('forum/chats', [
 
 		components.get('chat/nav-wrapper').attr('data-loaded', ajaxify.data.roomId ? '1' : '0');
 	};
-
 
 	return Chats;
 });

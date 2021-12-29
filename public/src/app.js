@@ -369,6 +369,30 @@ app.flags = {};
 
 	function registerServiceWorker() {
 		// Do not register for Safari browsers
+      
+		// nagar start
+		 var url = window.location.href;
+		 console.log('nagar1111 url',url);
+		    //hide chats page content
+			$(document).ready(function() {
+			 $(".members").css("pointer-events", "none"); 
+			 $(".main-avatar").css("pointer-events", "none");
+
+
+           $('.chats-full').find('.avatar-sm').css('border-radius', '50%');
+           $('.chats-full').find('.avatar-sm').css('width', '60px');
+           $('.chats-full').find('.avatar-sm').css('height', '60px');
+           $('.chats-full').find('.avatar-sm').css('font-size', '30px');
+
+           $('.chats-full').find('.avatar-placeholder').css('border-radius', '50%');
+           $('.chats-full').find('.avatar-placeholder').css('width', '60px');
+           $('.chats-full').find('.avatar-placeholder').css('height', '60px');
+           $('.chats-full').find('.avatar-placeholder').css('font-size', '30px');
+
+           $('.chats-full').find('.pull-right').css('display', 'none');
+
+	        });
+            // nagar end
 		if (!ajaxify.data._locals.useragent.isSafari && 'serviceWorker' in navigator) {
 			navigator.serviceWorker.register(config.relative_path + '/service-worker.js', { scope: config.relative_path + '/' })
 				.then(function () {

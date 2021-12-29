@@ -22,7 +22,9 @@ define('forum/header', ['forum/header/notifications', 'forum/header/chat'], func
     // $(document).ready(function() {
     //   $(".dropdown-toggle").css("pointer-events", "none");
     // });
-   
+    $(document).ready(function() {
+      $(".message-header").css("pointer-events", "none");
+    });
 	function handleStatusChange() {
 		$('[component="header/usercontrol"] [data-status]').off('click').on('click', function (e) {
 			const status = $(this).attr('data-status');
