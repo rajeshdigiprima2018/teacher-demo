@@ -370,29 +370,28 @@ app.flags = {};
 	function registerServiceWorker() {
 		// Do not register for Safari browsers
       
-		// nagar start
-		 var url = window.location.href;
-		 console.log('nagar1111 url',url);
-		    //hide chats page content
+		// nagar code start
+		var url = window.location.href;
+		let result = url.indexOf("chats");
+        console.log('nagar1111 url',url,result);
+        if(result>0){
+		    //hide chats page content   
 			$(document).ready(function() {
-			 $(".members").css("pointer-events", "none"); 
-			 $(".main-avatar").css("pointer-events", "none");
-
-
-           $('.chats-full').find('.avatar-sm').css('border-radius', '50%');
-           $('.chats-full').find('.avatar-sm').css('width', '60px');
-           $('.chats-full').find('.avatar-sm').css('height', '60px');
-           $('.chats-full').find('.avatar-sm').css('font-size', '30px');
-
-           $('.chats-full').find('.avatar-placeholder').css('border-radius', '50%');
-           $('.chats-full').find('.avatar-placeholder').css('width', '60px');
-           $('.chats-full').find('.avatar-placeholder').css('height', '60px');
-           $('.chats-full').find('.avatar-placeholder').css('font-size', '30px');
-
-           $('.chats-full').find('.pull-right').css('display', 'none');
-
-	        });
-            // nagar end
+				$('.header').css('display', 'none');
+				$('.chat-search').css({'border':'1px solid #dddddd'});
+                $('.chat-search').find('input').css({'background-color':'#fff','color':'#333','font-weight':'700'});
+				$('.expanded-chat').find('div').eq(0).css({'background-color':'#d9edf7','color':'#333','border-color':'#bce8f1'});
+				$('.expanded-chat').find('.members').css('pointer-events', 'none');
+				$('.expanded-chat').find('.members a').css({'color':'#333','font-weight':'500'});
+				$(".main-avatar").css("pointer-events", "none");
+	            $('.chats-full').find('.avatar-sm').css({'border-radius':'50%','width':'60px','height':'60px','font-size':'30px'});
+	            $('.chats-full').find('.avatar-placeholder').css({'border-radius':'50%','width':'60px','height':'60px','font-size':'30px'});
+	            $('.chats-full').find('.pull-right').css('display', 'none');
+	            $('.expanded-chat').find('button').eq(0).css('display', 'none');
+                $('.expanded-chat').find('button').eq(1).css('color', '#000');
+		    });
+        }
+        // nagar code end
 		if (!ajaxify.data._locals.useragent.isSafari && 'serviceWorker' in navigator) {
 			navigator.serviceWorker.register(config.relative_path + '/service-worker.js', { scope: config.relative_path + '/' })
 				.then(function () {
