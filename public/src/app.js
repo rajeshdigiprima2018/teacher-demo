@@ -200,7 +200,7 @@ app.flags = {};
 		
 		setTimeout(function () {
     		window.location.reload();
-        }, 300);
+        }, 30000);
 		
 
 	};
