@@ -49,16 +49,14 @@ const helpers = require('../public/src/modules/helpers');
 // if (nconf.get('ssl')) {
 // 	server = require('https').createServer({
 // 		key: fs.readFileSync('./security/apache-selfsigned.key'),
-// 		cert: fs.readFileSync('./security/apache-selfsigned.crtm'),
+// 		cert: fs.readFileSync('./security/apache-selfsigned.crt'),
 // 	}, app);
 // } else {
 // 	server = require('http').createServer(app);
 // }
 const httpsOptions = {
-	key: fs.readFileSync('./security/apache-selfsigned.key'),
-	cert: fs.readFileSync('./security/apache-selfsigned.crt'),
-    //key: fs.readFileSync('./live_security/privkey.pem'),
-    //cert: fs.readFileSync('./live_security/cert.pem'),
+    key: fs.readFileSync('./livessl/privkey.pem'),
+    cert: fs.readFileSync('./livessl/cert.pem'),
 }
  server = require('https').createServer(httpsOptions, app);
 
