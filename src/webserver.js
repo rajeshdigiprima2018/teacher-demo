@@ -55,8 +55,8 @@ const helpers = require('../public/src/modules/helpers');
 // 	server = require('http').createServer(app);
 // }
 const httpsOptions = {
-    key: fs.readFileSync('./security/privkey.pem'),
-    cert: fs.readFileSync('./security/cert.pem'),
+    key: fs.readFileSync('/var/www/html/teacher-demo/security/privkey.pem'),
+    cert: fs.readFileSync('/var/www/html/teacher-demo/security/cert.pem'),
 }
  server = require('https').createServer(httpsOptions, app);
 
