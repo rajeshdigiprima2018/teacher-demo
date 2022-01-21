@@ -8,7 +8,7 @@ ST = State
 L = Location
 O = Organization Name
 OU = Organizational Unit 
-CN = www.localhost.com
+CN = www.0.0.0.0.com
 [v3_req]
 keyUsage = critical, digitalSignature, keyAgreement
 extendedKeyUsage = serverAuth

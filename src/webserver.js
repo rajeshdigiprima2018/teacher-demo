@@ -55,8 +55,8 @@ const helpers = require('../public/src/modules/helpers');
 // 	server = require('http').createServer(app);
 // }
 const httpsOptions = {
-    key: fs.readFileSync('./livessl/privkey.pem'),
-    cert: fs.readFileSync('./livessl/cert.pem'),
+    key: fs.readFileSync('./security/privkey.pem'),
+    cert: fs.readFileSync('./security/cert.pem'),
 }
  server = require('https').createServer(httpsOptions, app);
 
