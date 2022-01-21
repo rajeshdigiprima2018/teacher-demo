@@ -55,8 +55,8 @@ const helpers = require('../public/src/modules/helpers');
 // 	server = require('http').createServer(app);
 // }
 const httpsOptions = {
-    key: fs.readFileSync('/var/www/html/teacher-demo/security/privkey.pem'),
-    cert: fs.readFileSync('/var/www/html/teacher-demo/security/cert.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/forum.digiprima.co/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/forum.digiprima.co/cert.pem'),
 }
  server = require('https').createServer(httpsOptions, app);
 
