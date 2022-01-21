@@ -1,12 +1,12 @@
 {
-    "url": "https://137.184.75.179:4567",
+    "url": "https://forum.digiprima.co:4567",
     "secret": "07bb7718-ec43-4f52-92ab-18ec37d1fa04",
     "database": "mongo",
     "port": "4567",
     "mongo": {
         "host": "localhost",
         "port": "27017",
-        "username":"",
+        "username": "",
         "password": "",
         "database": "nodebb",
         "uri": ""
