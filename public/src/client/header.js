@@ -19,6 +19,13 @@ define('forum/header', ['forum/header/notifications', 'forum/header/chat'], func
     $(document).ready(function() {
       $(".breadcrumb").css("display", "none");
     });
+     $(document).ready(function() {
+      $("#notif_dropdown").css("display", "none");
+    });
+
+    $(document).ready(function() {
+      $("#chat_dropdown").css("display", "none");
+    });
     // $(document).ready(function() {
     //   $(".dropdown-toggle").css("pointer-events", "none");
     // });
