@@ -61,8 +61,7 @@ const httpsOptions = {
     //cert: fs.readFileSync('./security-test/apache-selfsigned.crt'),
 }
  server = require('https').createServer(httpsOptions, app);
-
-    
+   
 module.exports.server = server;
 module.exports.app = app;
 
