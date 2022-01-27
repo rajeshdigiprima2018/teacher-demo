@@ -55,10 +55,10 @@ const helpers = require('../public/src/modules/helpers');
 // 	server = require('http').createServer(app);
 // }
 const httpsOptions = {
-    // key: fs.readFileSync('/etc/letsencrypt/live/forum.digiprima.co/privkey.pem'),
-    // cert: fs.readFileSync('/etc/letsencrypt/live/forum.digiprima.co/cert.pem'),
-    key: fs.readFileSync('./security-test/apache-selfsigned.key'),
-    cert: fs.readFileSync('./security-test/apache-selfsigned.crt'),
+     key: fs.readFileSync('/etc/letsencrypt/live/forum.digiprima.co/privkey.pem'),
+     cert: fs.readFileSync('/etc/letsencrypt/live/forum.digiprima.co/cert.pem'),
+    //key: fs.readFileSync('./security-test/apache-selfsigned.key'),
+    //cert: fs.readFileSync('./security-test/apache-selfsigned.crt'),
 }
  server = require('https').createServer(httpsOptions, app);
 
